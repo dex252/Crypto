@@ -231,8 +231,7 @@ namespace Lab8
         /// <returns></returns>
         private List<int> GetCloseKey(int first)
         {
-            var key = new List<int>();
-            key.Add(first);
+            var key = new List<int> {first};
             int sum = first;
 
             for (int i = 0; i < 7; i++)

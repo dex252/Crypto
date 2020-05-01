@@ -4,12 +4,13 @@ namespace Lab8
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-          // RSA rsa = new RSA(1447, 3191, "Солодков");
-           Backpack backpack = new Backpack("Солодков", 4);
-
-           Console.ReadKey();
+            // Backpack backpack = new Backpack("Солодков", 4);
+            ElGamal elGamal = new ElGamal("Солодков", 37);
+            // RSA rsa = new RSA(1447, 3191, "Солодков");
+            
+            Console.ReadKey();
         }
     }
 }

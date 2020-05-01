@@ -7,12 +7,18 @@ namespace Lab8
 {
     class RSA
     {
-        private int p;
-        private int q;
-        private List<int> message = new List<int>();
-        private string alphabet = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
-        System.Diagnostics.Stopwatch sw = new Stopwatch();
-        
+        private readonly int p;
+        private readonly int q;
+        private readonly List<int> message = new List<int>();
+        private readonly string alphabet = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
+        readonly System.Diagnostics.Stopwatch sw = new Stopwatch();
+
+        /// <summary>
+        /// Числа p и q - простые!
+        /// </summary>
+        /// <param name="p"></param>
+        /// <param name="q"></param>
+        /// <param name="word"></param>
         public RSA(int p, int q, string word)
         {
             sw.Start();
@@ -46,7 +52,7 @@ namespace Lab8
             Console.WriteLine($"Открытый ключ         : ({d}, {n})");
             Console.WriteLine($"Закрытый ключ         : ({e}, {n})");
 
-            var encrypt = Encrypt(d,n);
+            var encrypt = Encrypt(d, n);
             var decrypt = Decrypt(encrypt, e, n);
             var outMessage = GetMessage(decrypt);
 
@@ -153,7 +159,7 @@ namespace Lab8
             {
                 var c = BigInteger.Pow(m, e) % n;
 
-                Console.Write($"  {c, 7}");
+                Console.Write($"  {c,7}");
                 encrypt.Add(c);
             }
 
